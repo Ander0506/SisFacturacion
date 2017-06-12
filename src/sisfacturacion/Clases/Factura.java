@@ -112,4 +112,12 @@ public class Factura implements Serializable{
         this.totalPagar -= articuloAEliminar.getTotal();
         return articulos.remove(articuloAEliminar);
     }
+    
+    public void adicionarServicio(FacturaDetalleServicio servicioAOfrecer)throws Exception{
+        if (servicioAOfrecer == null) {
+            throw new Exception("El servicio no puede ser nulo");
+        }
+        servicios.add(servicioAOfrecer);
+        this.totalPagar += servicioAOfrecer.getPrecioServicio();
+    }
 }
