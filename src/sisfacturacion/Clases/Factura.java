@@ -120,4 +120,12 @@ public class Factura implements Serializable{
         servicios.add(servicioAOfrecer);
         this.totalPagar += servicioAOfrecer.getPrecioServicio();
     }
+    
+    public boolean eliminarArticulo(FacturaDetalleServicio servicioAEliminar) throws Exception{
+        if (servicioAEliminar == null) {
+            throw new Exception("El servicio a eliminar no se encuentra");
+        }
+        this.totalPagar -= servicioAEliminar.getPrecioServicio();
+        return servicios.remove(servicioAEliminar);
+    }
 }
