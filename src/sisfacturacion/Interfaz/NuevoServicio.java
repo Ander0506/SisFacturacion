@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sisfacturacion.Clases;
+package sisfacturacion.Interfaz;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sisfacturacion.Clases.Servicio;
 
 /**
  *
@@ -19,9 +20,6 @@ public class NuevoServicio extends javax.swing.JFrame {
      */
     public NuevoServicio() {
         initComponents();
-        estado.add(ActivoRbt);
-        estado.add(InactivoRbt);
-
     }
 
     /**
@@ -33,46 +31,33 @@ public class NuevoServicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        estado = new javax.swing.ButtonGroup();
         precioTxt = new javax.swing.JTextField();
         title = new javax.swing.JLabel();
         codigo = new javax.swing.JLabel();
-        ActivoRbt = new javax.swing.JRadioButton();
         nombre = new javax.swing.JLabel();
-        InactivoRbt = new javax.swing.JRadioButton();
         AceptarBt = new javax.swing.JButton();
         precio = new javax.swing.JLabel();
-        existencia1 = new javax.swing.JLabel();
         codigoTxt = new javax.swing.JTextField();
         NombreTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         precioTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 precioTxtActionPerformed(evt);
             }
         });
+        getContentPane().add(precioTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 105, 176, -1));
 
         title.setText("NUEVO SERVICIO");
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 11, -1, -1));
 
         codigo.setText("* Codigo:");
-
-        ActivoRbt.setText("Activo");
-        ActivoRbt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ActivoRbtActionPerformed(evt);
-            }
-        });
+        getContentPane().add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 49, -1, -1));
 
         nombre.setText("* Nombre:");
-
-        InactivoRbt.setText("Inactivo");
-        InactivoRbt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InactivoRbtActionPerformed(evt);
-            }
-        });
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 77, -1, -1));
 
         AceptarBt.setText("Aceptar");
         AceptarBt.addActionListener(new java.awt.event.ActionListener() {
@@ -80,73 +65,24 @@ public class NuevoServicio extends javax.swing.JFrame {
                 AceptarBtActionPerformed(evt);
             }
         });
+        getContentPane().add(AceptarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, 36));
 
         precio.setText("* Precio:");
-
-        existencia1.setText("Estado:");
+        getContentPane().add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 108, -1, -1));
 
         codigoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codigoTxtActionPerformed(evt);
             }
         });
+        getContentPane().add(codigoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 43, 176, -1));
 
         NombreTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreTxtActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nombre)
-                    .addComponent(codigo)
-                    .addComponent(precio)
-                    .addComponent(existencia1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(title)
-                    .addComponent(codigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(precioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ActivoRbt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(InactivoRbt))
-                    .addComponent(AceptarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codigo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(codigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(precioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(precio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(existencia1)
-                    .addComponent(ActivoRbt)
-                    .addComponent(InactivoRbt))
-                .addGap(18, 18, 18)
-                .addComponent(AceptarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
+        getContentPane().add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 74, 176, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,25 +91,12 @@ public class NuevoServicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_precioTxtActionPerformed
 
-    private void ActivoRbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActivoRbtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ActivoRbtActionPerformed
-
-    private void InactivoRbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InactivoRbtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InactivoRbtActionPerformed
-
     private void AceptarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtActionPerformed
 
        
         try {
             // TODO add your handling code here:
             Servicio service = new Servicio(codigoTxt.getText(),NombreTxt.getText(),Double.parseDouble(precioTxt.getText()));
-            if(ActivoRbt.isSelected() == true){
-                service.activar();
-            }else{
-                service.desactivar();
-            }
         } catch (Exception ex) {
             Logger.getLogger(NuevoServicio.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -226,13 +149,9 @@ public class NuevoServicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarBt;
-    private javax.swing.JRadioButton ActivoRbt;
-    private javax.swing.JRadioButton InactivoRbt;
     private javax.swing.JTextField NombreTxt;
     private javax.swing.JLabel codigo;
     private javax.swing.JTextField codigoTxt;
-    private javax.swing.ButtonGroup estado;
-    private javax.swing.JLabel existencia1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel precio;
     private javax.swing.JTextField precioTxt;

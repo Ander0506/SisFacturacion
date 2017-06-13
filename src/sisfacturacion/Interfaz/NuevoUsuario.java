@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sisfacturacion.Clases;
+package sisfacturacion.Interfaz;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sisfacturacion.Clases.Usuario;
 
 /**
  *
@@ -21,6 +22,9 @@ public class NuevoUsuario extends javax.swing.JFrame {
         initComponents();
         Genero.add(MujerRbt);
         Genero.add(HombreRbt);
+        
+        Tipo.add(AdminRbt);
+        Tipo.add(UserRbt);
 
     }
 
@@ -34,6 +38,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         Genero = new javax.swing.ButtonGroup();
+        Tipo = new javax.swing.ButtonGroup();
         edadTxt = new javax.swing.JTextField();
         apellidotxt = new javax.swing.JTextField();
         DireccionTxt = new javax.swing.JTextField();
@@ -51,26 +56,33 @@ public class NuevoUsuario extends javax.swing.JFrame {
         NombreTxt = new javax.swing.JTextField();
         telefono = new javax.swing.JLabel();
         Telefonotxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        UserRbt = new javax.swing.JRadioButton();
+        AdminRbt = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         edadTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edadTxtActionPerformed(evt);
             }
         });
+        getContentPane().add(edadTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 157, 176, -1));
 
         apellidotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 apellidotxtActionPerformed(evt);
             }
         });
+        getContentPane().add(apellidotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 180, -1));
 
         DireccionTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DireccionTxtActionPerformed(evt);
             }
         });
+        getContentPane().add(DireccionTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 186, 176, -1));
 
         HombreRbt.setText("Hombre");
         HombreRbt.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +90,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
                 HombreRbtActionPerformed(evt);
             }
         });
+        getContentPane().add(HombreRbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 132, -1, -1));
 
         MujerRbt.setText("Mujer");
         MujerRbt.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +98,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
                 MujerRbtActionPerformed(evt);
             }
         });
+        getContentPane().add(MujerRbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 132, -1, -1));
 
         AceptarBt.setText("Aceptar");
         AceptarBt.addActionListener(new java.awt.event.ActionListener() {
@@ -92,124 +106,66 @@ public class NuevoUsuario extends javax.swing.JFrame {
                 AceptarBtActionPerformed(evt);
             }
         });
+        getContentPane().add(AceptarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 88, 38));
 
         title.setText("NUEVO USUARIO");
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 11, -1, -1));
 
         codigo.setText("* Codigo:");
+        getContentPane().add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 49, -1, -1));
 
         nombre.setText("* Nombre:");
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 77, -1, -1));
 
         apellido.setText("*Apellido:");
+        getContentPane().add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 108, -1, -1));
 
         edad.setText("Edad:");
+        getContentPane().add(edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 160, -1, -1));
 
         direccion.setText("Direccion:");
+        getContentPane().add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 192, -1, -1));
 
         genero.setText("Genero:");
+        getContentPane().add(genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 136, -1, -1));
 
         codigoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codigoTxtActionPerformed(evt);
             }
         });
+        getContentPane().add(codigoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 43, 176, -1));
 
         NombreTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreTxtActionPerformed(evt);
             }
         });
+        getContentPane().add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 74, 176, -1));
 
         telefono.setText("*Telefono:");
+        getContentPane().add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 223, -1, -1));
 
         Telefonotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TelefonotxtActionPerformed(evt);
             }
         });
+        getContentPane().add(Telefonotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 217, 176, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(edad)
-                        .addComponent(direccion))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nombre)
-                                    .addComponent(codigo))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title)
-                                    .addComponent(codigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(apellido)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(apellidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(10, 10, 10)
-                                            .addComponent(genero))
-                                        .addComponent(telefono, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(edadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(HombreRbt)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(MujerRbt))
-                                        .addComponent(DireccionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Telefonotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(AceptarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codigo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(codigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(apellido)
-                    .addComponent(apellidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(genero)
-                    .addComponent(HombreRbt)
-                    .addComponent(MujerRbt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edad)
-                    .addComponent(edadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DireccionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(direccion, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Telefonotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(telefono))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AceptarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel1.setText("Tipo:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+
+        UserRbt.setText("Usuario");
+        UserRbt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserRbtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(UserRbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
+
+        AdminRbt.setText("Administrador");
+        getContentPane().add(AdminRbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -237,9 +193,8 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private void AceptarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtActionPerformed
 
       
-        try {
-            // TODO add your handling code here:
-            Usuario user = new Usuario(codigoTxt.getText(), NombreTxt.getText(), apellidotxt.getText(), Telefonotxt.getText());
+        try {   
+            Usuario user = new Usuario(codigoTxt.getText(), NombreTxt.getText(), apellidotxt.getText(), Telefonotxt.getText(),UserRbt.isSelected());
             user.setEdad(Integer.parseInt(edadTxt.getText()));
             user.setDireccion(DireccionTxt.getText());
             if(HombreRbt.isSelected() == true){
@@ -265,6 +220,10 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private void TelefonotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonotxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TelefonotxtActionPerformed
+
+    private void UserRbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserRbtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UserRbtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,12 +262,15 @@ public class NuevoUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarBt;
+    private javax.swing.JRadioButton AdminRbt;
     private javax.swing.JTextField DireccionTxt;
     private javax.swing.ButtonGroup Genero;
     private javax.swing.JRadioButton HombreRbt;
     private javax.swing.JRadioButton MujerRbt;
     private javax.swing.JTextField NombreTxt;
     private javax.swing.JTextField Telefonotxt;
+    private javax.swing.ButtonGroup Tipo;
+    private javax.swing.JRadioButton UserRbt;
     private javax.swing.JLabel apellido;
     private javax.swing.JTextField apellidotxt;
     private javax.swing.JLabel codigo;
@@ -317,6 +279,7 @@ public class NuevoUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel edad;
     private javax.swing.JTextField edadTxt;
     private javax.swing.JLabel genero;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel telefono;
     private javax.swing.JLabel title;

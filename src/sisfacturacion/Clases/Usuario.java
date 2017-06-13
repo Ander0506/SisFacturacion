@@ -21,8 +21,9 @@ public class Usuario implements Serializable{
     private String direccion;
     private String telefono;
     private String Genero;
-
-    public Usuario(String id, String nombre, String apellido, String telefono) throws Exception {
+    private Boolean Tipo;// Si es True es usuario, False Administrador
+    
+    public Usuario(String id, String nombre, String apellido, String telefono, Boolean tipo) throws Exception {
         
         if(id == null){
             throw new Exception("El Id no puede ser nulo");
@@ -36,12 +37,15 @@ public class Usuario implements Serializable{
         if(telefono == null){
             throw new Exception("El telefono no puede ser nulo");
         }
+        if(tipo == null){
+            throw new Exception("El tipo no puede ser nulo");
+        }
         
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
-       
+        this.Tipo = tipo;
     }
 
     public String getId() {
@@ -71,6 +75,11 @@ public class Usuario implements Serializable{
     public String getGenero() {
         return Genero;
     }
+
+    public Boolean getTipo() {
+        return Tipo;
+    }
+    
 
     public void setId(String id) throws Exception {
         if(id == null){
@@ -112,19 +121,24 @@ public class Usuario implements Serializable{
         this.Genero = Genero;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.id);
-        hash = 59 * hash + Objects.hashCode(this.nombre);
-        hash = 59 * hash + Objects.hashCode(this.apellido);
-        hash = 59 * hash + this.edad;
-        hash = 59 * hash + Objects.hashCode(this.direccion);
-        hash = 59 * hash + Objects.hashCode(this.telefono);
-        hash = 59 * hash + Objects.hashCode(this.Genero);
-        return hash;
+    public void setTipo(Boolean Tipo) {
+        this.Tipo = Tipo;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 67 * hash + Objects.hashCode(this.nombre);
+        hash = 67 * hash + Objects.hashCode(this.apellido);
+        hash = 67 * hash + this.edad;
+        hash = 67 * hash + Objects.hashCode(this.direccion);
+        hash = 67 * hash + Objects.hashCode(this.telefono);
+        hash = 67 * hash + Objects.hashCode(this.Genero);
+        hash = 67 * hash + Objects.hashCode(this.Tipo);
+        return hash;
+    }    
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
