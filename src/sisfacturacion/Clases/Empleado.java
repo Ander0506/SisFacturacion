@@ -169,6 +169,14 @@ public class Empleado implements Serializable{
         return servicioPorEmpleado.get(fechaServicio).remove(servicioAEliminar);
     }
     
+    public void activar(){
+        estado = true;
+    }
+    
+    public void desactivar(){
+        estado = false;
+    }
+    
 }
 
 //ap<Integer, String> nombreMap = new HashMap<Integer, String>();
