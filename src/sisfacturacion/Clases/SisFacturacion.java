@@ -1,6 +1,7 @@
 
 package sisfacturacion.Clases;
 
+import java.sql.*;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -8,9 +9,12 @@ import java.util.logging.Logger;
 
 public class SisFacturacion {
     
-    public static void main(String[] args) {
+    public static void main(String[] args){
          
         try {
+            Sistema nuevosistema = new Sistema();
+            ConeccionBD con = new ConeccionBD();
+            Connection coneccion = con.conexion();
             Factura fac = new Factura();
             Servicio ser = new Servicio("01", "Lavado de carros", 10000);
             Empleado empleado1 = new Empleado("01", "Julio", "Amaris", "calle 56 #5f-09");
@@ -28,7 +32,7 @@ public class SisFacturacion {
             empleado1.adicionarServicio(ser, "10/junio/2017");
             empleado1.adicionarServicio(ser, "11/junio/2017");
             empleado1.adicionarServicio(ser, "11/junio/2017");
-            System.out.println(empleado1);
+//            System.out.println(nuevosistema.serializarObjJavaASQL(coneccion, ser));
         } catch (Exception ex) {
             Logger.getLogger(SisFacturacion.class.getName()).log(Level.SEVERE, null, ex);
         }

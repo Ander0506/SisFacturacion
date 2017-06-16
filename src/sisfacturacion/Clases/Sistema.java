@@ -1,16 +1,10 @@
 
 package sisfacturacion.Clases;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
+import java.sql.*;
 import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,6 +13,8 @@ public class Sistema implements Serializable{
     private LinkedList<Empleado> empleados;
     private LinkedList<Servicio> servicios;
     private LinkedList<Factura> facturas;
+    private final String OBJETO_SERIALIZABLE = "INSERT INTO servicio(Nombre_Objeto, Objeto_Serializado) VALUES (?, ?)";
+    private final String OBJETO_DESERIALIZABLE = "SELECT serialized_object FROM serialized_java_objects WHERE serialized_id = ?";
 
     public Sistema() {
         articulos = new LinkedList<>();
@@ -229,4 +225,22 @@ public class Sistema implements Serializable{
 
         }
     }
+     
+     public long serializarObjJavaASQL(Connection conneccion, Object objetoASerializar) throws SQLException {
+
+		PreparedStatement pstmt = conneccion.prepareStatement(OBJETO_SERIALIZABLE);
+
+		pstmt.setString(1, objetoASerializar.getClass().getName());
+		pstmt.setObject(2, objetoASerializar);
+		pstmt.executeUpdate();
+		ResultSet resultado = pstmt.getGeneratedKeys();
+		int serializado_id = -1;
+		if (resultado.next()) {
+			serializado_id = resultado.getInt(1);
+		}
+		resultado.close();
+		pstmt.close();
+		return serializado_id;
+	}
+     
 }
