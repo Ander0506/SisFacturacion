@@ -26,8 +26,8 @@ public class ConeccionBD {
 	return coneccion;	
     }
     
-//    Statement createStatement(){
-//        throw new UnsupportedOperationException("No soportado");
-//    }
+    Statement createStatement(){
+        throw new UnsupportedOperationException("No soportado");
+    }
     
 }

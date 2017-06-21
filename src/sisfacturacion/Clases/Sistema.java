@@ -170,8 +170,30 @@ public class Sistema implements Serializable{
         return articulos;
     }
     
-    public LinkedList<Empleado> listaDeEmpleados(){
-        return empleados;
+    public LinkedList<Empleado> listaDeEmpleados(Connection conexion)throws Exception{
+     LinkedList empl = new LinkedList();
+    String sql= "SELECT * FROM empleados";
+    Statement pstmt = conexion.createStatement();
+    ResultSet rs = pstmt.executeQuery(sql);
+        while (rs.next()) {
+            empl.add(rs.getString(1));
+            empl.add(rs.getString(2));
+            empl.add(rs.getString(3));
+            empl.add(rs.getString(4));
+            empl.add(rs.getString(5));
+            empl.add(rs.getBoolean(6));
+        }
+//    String []datos = new String [5];
+//        try {
+//            while(rs.next()){
+//                datos[0]=rs.getString(1);
+//                datos[1]=rs.getString(2);
+//                datos[2]=rs.getString(3);
+//                datos[3]=rs.getString(4);
+//                datos[4]=rs.getString(5);
+//                datos[5]=rs.getString(6);
+//                modelo.addRow(datos);
+        return empl;
     }
     
     public LinkedList<Servicio> listaDeServicios(){
