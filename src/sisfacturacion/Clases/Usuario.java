@@ -21,9 +21,10 @@ public class Usuario implements Serializable{
     private String direccion;
     private String telefono;
     private String Genero;
-    private Boolean Tipo;// Si es True es usuario, False Administrador
+    private Boolean estado = true;
+    private Boolean Tipo = true;// Si es True es usuario, False Administrador
     
-    public Usuario(String id, String nombre, String apellido, String telefono, Boolean tipo) throws Exception {
+    public Usuario(String id, String nombre, String apellido, String telefono) throws Exception {
         
         if(id == null){
             throw new Exception("El Id no puede ser nulo");
@@ -37,15 +38,10 @@ public class Usuario implements Serializable{
         if(telefono == null){
             throw new Exception("El telefono no puede ser nulo");
         }
-        if(tipo == null){
-            throw new Exception("El tipo no puede ser nulo");
-        }
-        
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
-        this.Tipo = tipo;
     }
 
     public String getId() {
@@ -124,6 +120,14 @@ public class Usuario implements Serializable{
     public void setTipo(Boolean Tipo) {
         this.Tipo = Tipo;
     }
+    
+     public void activar(){
+        estado = true;
+    }
+    
+    public void desactivar(){
+        estado = false;
+    }
 
     @Override
     public int hashCode() {
@@ -161,10 +165,4 @@ public class Usuario implements Serializable{
     public String toString() {
         return id +"  " + nombre + "  " + apellido ;
     }
-    
-    
-    
-
-    
-    
 }

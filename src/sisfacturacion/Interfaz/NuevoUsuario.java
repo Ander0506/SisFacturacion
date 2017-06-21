@@ -1,31 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sisfacturacion.Interfaz;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sisfacturacion.Clases.Usuario;
 
-/**
- *
- * @author andre
- */
+
 public class NuevoUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NuevoUsuario
-     */
+
     public NuevoUsuario() {
         initComponents();
         Genero.add(MujerRbt);
         Genero.add(HombreRbt);
-        
-        Tipo.add(AdminRbt);
-        Tipo.add(UserRbt);
-
     }
 
     /**
@@ -40,12 +27,12 @@ public class NuevoUsuario extends javax.swing.JFrame {
         Genero = new javax.swing.ButtonGroup();
         Tipo = new javax.swing.ButtonGroup();
         edadTxt = new javax.swing.JTextField();
-        apellidotxt = new javax.swing.JTextField();
-        DireccionTxt = new javax.swing.JTextField();
+        apellidoTxt = new javax.swing.JTextField();
+        direccionTxt = new javax.swing.JTextField();
         HombreRbt = new javax.swing.JRadioButton();
         MujerRbt = new javax.swing.JRadioButton();
         AceptarBt = new javax.swing.JButton();
-        title = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         codigo = new javax.swing.JLabel();
         nombre = new javax.swing.JLabel();
         apellido = new javax.swing.JLabel();
@@ -53,12 +40,9 @@ public class NuevoUsuario extends javax.swing.JFrame {
         direccion = new javax.swing.JLabel();
         genero = new javax.swing.JLabel();
         codigoTxt = new javax.swing.JTextField();
-        NombreTxt = new javax.swing.JTextField();
+        nombreTxt = new javax.swing.JTextField();
         telefono = new javax.swing.JLabel();
         Telefonotxt = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        UserRbt = new javax.swing.JRadioButton();
-        AdminRbt = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,19 +54,19 @@ public class NuevoUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(edadTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 157, 176, -1));
 
-        apellidotxt.addActionListener(new java.awt.event.ActionListener() {
+        apellidoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                apellidotxtActionPerformed(evt);
+                apellidoTxtActionPerformed(evt);
             }
         });
-        getContentPane().add(apellidotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 180, -1));
+        getContentPane().add(apellidoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 180, -1));
 
-        DireccionTxt.addActionListener(new java.awt.event.ActionListener() {
+        direccionTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DireccionTxtActionPerformed(evt);
+                direccionTxtActionPerformed(evt);
             }
         });
-        getContentPane().add(DireccionTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 186, 176, -1));
+        getContentPane().add(direccionTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 186, 176, -1));
 
         HombreRbt.setText("Hombre");
         HombreRbt.addActionListener(new java.awt.event.ActionListener() {
@@ -108,8 +92,8 @@ public class NuevoUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(AceptarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 88, 38));
 
-        title.setText("NUEVO USUARIO");
-        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 11, -1, -1));
+        titulo.setText("NUEVO USUARIO");
+        getContentPane().add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 11, -1, -1));
 
         codigo.setText("* Codigo:");
         getContentPane().add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 49, -1, -1));
@@ -136,12 +120,12 @@ public class NuevoUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(codigoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 43, 176, -1));
 
-        NombreTxt.addActionListener(new java.awt.event.ActionListener() {
+        nombreTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreTxtActionPerformed(evt);
+                nombreTxtActionPerformed(evt);
             }
         });
-        getContentPane().add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 74, 176, -1));
+        getContentPane().add(nombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 74, 176, -1));
 
         telefono.setText("*Telefono:");
         getContentPane().add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 223, -1, -1));
@@ -153,20 +137,6 @@ public class NuevoUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(Telefonotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 217, 176, -1));
 
-        jLabel1.setText("Tipo:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
-
-        UserRbt.setText("Usuario");
-        UserRbt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserRbtActionPerformed(evt);
-            }
-        });
-        getContentPane().add(UserRbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
-
-        AdminRbt.setText("Administrador");
-        getContentPane().add(AdminRbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -174,13 +144,13 @@ public class NuevoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_edadTxtActionPerformed
 
-    private void apellidotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidotxtActionPerformed
+    private void apellidoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidoTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_apellidotxtActionPerformed
+    }//GEN-LAST:event_apellidoTxtActionPerformed
 
-    private void DireccionTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DireccionTxtActionPerformed
+    private void direccionTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DireccionTxtActionPerformed
+    }//GEN-LAST:event_direccionTxtActionPerformed
 
     private void HombreRbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HombreRbtActionPerformed
         // TODO add your handling code here:
@@ -194,9 +164,9 @@ public class NuevoUsuario extends javax.swing.JFrame {
 
       
         try {   
-            Usuario user = new Usuario(codigoTxt.getText(), NombreTxt.getText(), apellidotxt.getText(), Telefonotxt.getText(),UserRbt.isSelected());
+            Usuario user = new Usuario(codigoTxt.getText(), nombreTxt.getText(), apellidoTxt.getText(), Telefonotxt.getText());
             user.setEdad(Integer.parseInt(edadTxt.getText()));
-            user.setDireccion(DireccionTxt.getText());
+            user.setDireccion(direccionTxt.getText());
             if(HombreRbt.isSelected() == true){
                 user.setGenero("Hombre");
             }else{
@@ -213,75 +183,38 @@ public class NuevoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_codigoTxtActionPerformed
 
-    private void NombreTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTxtActionPerformed
+    private void nombreTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NombreTxtActionPerformed
+    }//GEN-LAST:event_nombreTxtActionPerformed
 
     private void TelefonotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonotxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TelefonotxtActionPerformed
 
-    private void UserRbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserRbtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UserRbtActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NuevoUsuario().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarBt;
-    private javax.swing.JRadioButton AdminRbt;
-    private javax.swing.JTextField DireccionTxt;
     private javax.swing.ButtonGroup Genero;
     private javax.swing.JRadioButton HombreRbt;
     private javax.swing.JRadioButton MujerRbt;
-    private javax.swing.JTextField NombreTxt;
     private javax.swing.JTextField Telefonotxt;
     private javax.swing.ButtonGroup Tipo;
-    private javax.swing.JRadioButton UserRbt;
     private javax.swing.JLabel apellido;
-    private javax.swing.JTextField apellidotxt;
+    private javax.swing.JTextField apellidoTxt;
     private javax.swing.JLabel codigo;
     private javax.swing.JTextField codigoTxt;
     private javax.swing.JLabel direccion;
+    private javax.swing.JTextField direccionTxt;
     private javax.swing.JLabel edad;
     private javax.swing.JTextField edadTxt;
     private javax.swing.JLabel genero;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nombre;
+    private javax.swing.JTextField nombreTxt;
     private javax.swing.JLabel telefono;
-    private javax.swing.JLabel title;
+    private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }

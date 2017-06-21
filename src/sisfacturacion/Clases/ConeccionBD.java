@@ -19,7 +19,7 @@ public class ConeccionBD {
         try {
             Class.forName(driver);
             coneccion = DriverManager.getConnection(url, username, password);
-            System.out.println("Coneccion Exitosa");
+//            System.out.println("Coneccion Exitosa");
         } catch (Exception ex) {
 //            JOptionPane.showMessageDialog(null, ex.getMessage());
         }

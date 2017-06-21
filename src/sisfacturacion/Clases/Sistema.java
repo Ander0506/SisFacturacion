@@ -15,6 +15,7 @@ public class Sistema implements Serializable{
     private LinkedList<Factura> facturas;
     private final String OBJETO_SERIALIZABLE = "INSERT INTO servicio(Nombre_Objeto, Objeto_Serializado) VALUES (?, ?)";
     private final String OBJETO_DESERIALIZABLE = "SELECT serialized_object FROM serialized_java_objects WHERE serialized_id = ?";
+    private final String EMPLEADO_BD = "INSERT INTO empleados(Id, Nombre, Apellido, Direccion, Telefono, Estado) VALUES (?,?,?,?,?,?)";
 
     public Sistema() {
         articulos = new LinkedList<>();
@@ -225,6 +226,25 @@ public class Sistema implements Serializable{
 
         }
     }
+     
+     public void guardarBD(Connection conexion, Object objetoAGuardar)throws Exception{
+         if (objetoAGuardar.getClass() == Empleado.class) {
+             Empleado nuevoEmpleado = (Empleado) objetoAGuardar;
+             PreparedStatement pstmt = conexion.prepareStatement(EMPLEADO_BD);
+             pstmt.setString(1,nuevoEmpleado.getId());
+             pstmt.setString(2,nuevoEmpleado.getNombre());
+             pstmt.setString(3,nuevoEmpleado.getApellido());
+             pstmt.setString(4,nuevoEmpleado.getDir());
+             pstmt.setString(5,nuevoEmpleado.getTelefono());
+             if (nuevoEmpleado.isEstado()) {
+                 pstmt.setBoolean(6,true); 
+             }else{
+                 pstmt.setBoolean(6, false);
+             }
+             pstmt.executeUpdate();
+             pstmt.close();
+         }
+     }
      
      public long serializarObjJavaASQL(Connection conneccion, Object objetoASerializar) throws SQLException {
 

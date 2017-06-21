@@ -14,7 +14,6 @@ public class Empleado implements Serializable{
     private String dir;
     private String telefono;
     private Map <String, LinkedList<Servicio>> servicioPorEmpleado;
-    private double sueldo;
     private boolean estado = true;
 
     public Empleado(String id, String nombre, String apellido, String dir)throws Exception{
@@ -102,14 +101,13 @@ public class Empleado implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.id);
-        hash = 83 * hash + Objects.hashCode(this.nombre);
-        hash = 83 * hash + Objects.hashCode(this.apellido);
-        hash = 83 * hash + Objects.hashCode(this.dir);
-        hash = 83 * hash + Objects.hashCode(this.telefono);
-        hash = 83 * hash + Objects.hashCode(this.servicioPorEmpleado);
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.sueldo) ^ (Double.doubleToLongBits(this.sueldo) >>> 32));
-        hash = 83 * hash + (this.estado ? 1 : 0);
+        hash = 41 * hash + Objects.hashCode(this.id);
+        hash = 41 * hash + Objects.hashCode(this.nombre);
+        hash = 41 * hash + Objects.hashCode(this.apellido);
+        hash = 41 * hash + Objects.hashCode(this.dir);
+        hash = 41 * hash + Objects.hashCode(this.telefono);
+        hash = 41 * hash + Objects.hashCode(this.servicioPorEmpleado);
+        hash = 41 * hash + (this.estado ? 1 : 0);
         return hash;
     }
 
@@ -134,7 +132,7 @@ public class Empleado implements Serializable{
 
     @Override
     public String toString() {
-        return id + " " + nombre + " " + apellido + " " + dir + " " + telefono + " " + servicioPorEmpleado + " " + sueldo + " " + estado;
+        return id + " " + nombre + " " + apellido + " " + dir + " " + telefono + " " + servicioPorEmpleado + " " + estado;
     }
     
     

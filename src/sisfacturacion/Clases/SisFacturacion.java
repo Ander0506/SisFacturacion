@@ -21,7 +21,7 @@ public class SisFacturacion {
             empleado1.setTelefono("3026589745");
             Empleado empleado2 = new Empleado("02", "Alvaro", "Viloria", "calle 65 #8d-05");
             empleado1.setTelefono("3048976532");
-            Empleado empleado3 = new Empleado("03", "Anderson", "Jimenez", "calle 67B #4D-04");
+            Empleado empleado3 = new Empleado("1045674309", "Anderson", "Jimenez", "calle 67B #4D-04");
             empleado1.setTelefono("3014153564");
             System.out.println(empleado1);
             empleado1.adicionarServicio(ser, fac.getFechaString());
@@ -32,7 +32,7 @@ public class SisFacturacion {
             empleado1.adicionarServicio(ser, "10/junio/2017");
             empleado1.adicionarServicio(ser, "11/junio/2017");
             empleado1.adicionarServicio(ser, "11/junio/2017");
-//            System.out.println(nuevosistema.serializarObjJavaASQL(coneccion, ser));
+            nuevosistema.guardarBD(coneccion, empleado3);
         } catch (Exception ex) {
             Logger.getLogger(SisFacturacion.class.getName()).log(Level.SEVERE, null, ex);
         }
