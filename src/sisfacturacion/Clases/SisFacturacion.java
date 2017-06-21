@@ -32,7 +32,8 @@ public class SisFacturacion {
             empleado1.adicionarServicio(ser, "10/junio/2017");
             empleado1.adicionarServicio(ser, "11/junio/2017");
             empleado1.adicionarServicio(ser, "11/junio/2017");
-            nuevosistema.guardarBD(coneccion, empleado3);
+            System.out.println(empleado1);
+//            nuevosistema.guardarBD(coneccion, empleado3);
         } catch (Exception ex) {
             Logger.getLogger(SisFacturacion.class.getName()).log(Level.SEVERE, null, ex);
         }
